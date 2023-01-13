@@ -1,0 +1,351 @@
+{
+  "version": "3.0",
+  "categories": [
+    {
+      "label": "Extractors",
+      "description": "Use extractors match text within your documents.",
+      "image": "/images/palette/outputs_open.svg",
+      "id": "6e057c71",
+      "node_types": [
+        {
+          "id": "input-node",
+          "op": "input",
+          "parameters": { "type": "input" },
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 1,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ],
+          "app_data": {
+            "ui_data": {
+              "label": "Input Documents",
+              "description": "Select documents to apply your NLP rules.",
+              "image": "/images/palette/nodes/input_document.svg",
+              "x_pos": 0,
+              "y_pos": 0
+            }
+          }
+        },
+        {
+          "id": "regex-node",
+          "op": "regex",
+          "parameters": { "type": "regex" },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 1,
+                    "max": 2
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 1,
+                    "max": 1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ],
+          "app_data": {
+            "ui_data": {
+              "label": "RegEx",
+              "description": "Build a regular expression extractor.",
+              "image": "/images/palette/nodes/regex.svg",
+              "x_pos": 0,
+              "y_pos": 0
+            }
+          }
+        },
+        {
+          "id": "dictionary-node",
+          "op": "dictionary",
+          "parameters": { "type": "dictionary" },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 1,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 1,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ],
+          "app_data": {
+            "ui_data": {
+              "label": "Dictionary",
+              "description": "Phrases to be matched.",
+              "image": "/images/palette/nodes/dictionary.svg",
+              "x_pos": 0,
+              "y_pos": 0
+            }
+          }
+        },
+		{
+			"id": "literal-node",
+			"op": "literal",
+			"parameters": { "type": "literal" },
+			"inputs": [
+			  {
+				"id": "inPort",
+				"app_data": {
+				  "ui_data": {
+					"cardinality": {
+					  "min": 1,
+					  "max": 1
+					},
+					"label": "Input Port"
+				  }
+				}
+			  }
+			],
+			"outputs": [
+			  {
+				"id": "outPort",
+				"app_data": {
+				  "ui_data": {
+					"cardinality": {
+					  "min": 1,
+					  "max": -1
+					},
+					"label": "Output Port"
+				  }
+				}
+			  }
+			],
+			"app_data": {
+			  "ui_data": {
+				"label": "Literal",
+				"description": "Literal string to be matched.",
+				"image": "/images/palette/nodes/row.svg",
+				"x_pos": 0,
+				"y_pos": 0
+			  }
+			}
+		  }
+      ]
+    },
+    {
+      "label": "Generation",
+      "description": "Use extractors to build NLP rules",
+      "image": "/images/palette/operations_open.svg",
+      "id": "6e057c72",
+      "node_types": [
+        {
+          "id": "sequence-node",
+          "op": "sequence",
+          "parameters": { "type": "sequence" },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 2,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ],
+          "app_data": {
+            "ui_data": {
+              "label": "Sequence",
+              "description": "Connect your extractors for execution",
+              "image": "/images/palette/nodes/sequence.svg",
+              "x_pos": 0,
+              "y_pos": 0
+            }
+          }
+        },
+        {
+          "id": "union-node",
+          "op": "union",
+          "parameters": { "type": "union" },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 2,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ],
+          "app_data": {
+            "ui_data": {
+              "label": "Union",
+              "description": "Join nodes with similar schemas",
+              "image": "/images/palette/nodes/union.svg",
+              "x_pos": 0,
+              "y_pos": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "Refinement",
+      "description": "Use extractors to build NLP rules",
+      "image": "/images/palette/models_open.svg",
+      "id": "6e057c73",
+      "node_types": [
+        {
+          "id": "filter-node",
+          "op": "filter",
+          "parameters": { "type": "filter" },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 2,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ],
+          "app_data": {
+            "ui_data": {
+              "label": "Filter",
+              "description": "Remove annotations from the output",
+              "image": "/images/palette/nodes/filter.svg",
+              "x_pos": 0,
+              "y_pos": 0
+            }
+          }
+        },
+        {
+          "id": "consolidate-node",
+          "op": "consolidate",
+          "parameters": { "type": "consolidate" },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 1,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ],
+          "app_data": {
+            "ui_data": {
+              "label": "Consolidate",
+              "description": "Remove overlapping annotations",
+              "image": "/images/palette/nodes/consolidate.svg",
+              "x_pos": 0,
+              "y_pos": 0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

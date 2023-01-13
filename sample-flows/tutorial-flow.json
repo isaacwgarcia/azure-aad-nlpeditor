@@ -1,0 +1,626 @@
+{
+  "flow": {
+    "doc_type": "pipeline",
+    "version": "3.0",
+    "json_schema": "http://api.dataplatform.ibm.com/schemas/common-pipeline/pipeline-flow/pipeline-flow-v3-schema.json",
+    "id": "9def9922-ef82-44af-bed0-2c3e89d8777e",
+    "primary_pipeline": "20cc56a8-700a-4d35-bcf2-944d63fa2478",
+    "pipelines": [
+      {
+        "id": "20cc56a8-700a-4d35-bcf2-944d63fa2478",
+        "nodes": [
+          {
+            "id": "b63805c5-9d72-4e53-9e66-c8f7419fcf68",
+            "app_data": {
+              "ui_data": {
+                "label": "Input Documents_1",
+                "image": "/images/palette/nodes/input_document.svg",
+                "x_pos": 110.69033813476562,
+                "y_pos": 169.95101165771484,
+                "description": "Select documents to apply your NLP rules."
+              }
+            },
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": -1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "input" }
+          },
+          {
+            "id": "bba756a6-5a45-426c-a8d9-4a1cd6a19881",
+            "app_data": {
+              "ui_data": {
+                "label": "Division",
+                "image": "/images/palette/nodes/dictionary.svg",
+                "x_pos": 403,
+                "y_pos": 88,
+                "description": "Phrases to be matched."
+              }
+            },
+            "inputs": [
+              {
+                "id": "inPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": 1 },
+                    "label": "Input Port"
+                  }
+                },
+                "links": [
+                  {
+                    "id": "1eae26db-fba2-4eb9-bf67-154e62f5f3ee",
+                    "node_id_ref": "b63805c5-9d72-4e53-9e66-c8f7419fcf68",
+                    "port_id_ref": "outPort"
+                  }
+                ]
+              }
+            ],
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": -1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "dictionary" }
+          },
+          {
+            "id": "8494ae16-4f5e-4e48-87d0-988b98c2cefd",
+            "app_data": {
+              "ui_data": {
+                "label": "Metric",
+                "image": "/images/palette/nodes/dictionary.svg",
+                "x_pos": 404.56363643446366,
+                "y_pos": 188.4835242977147,
+                "description": "Phrases to be matched."
+              }
+            },
+            "inputs": [
+              {
+                "id": "inPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": 1 },
+                    "label": "Input Port"
+                  }
+                },
+                "links": [
+                  {
+                    "id": "330fb7e3-82d8-4314-b23e-4d077cb4769d",
+                    "node_id_ref": "b63805c5-9d72-4e53-9e66-c8f7419fcf68",
+                    "port_id_ref": "outPort"
+                  }
+                ]
+              }
+            ],
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": -1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "dictionary" }
+          },
+          {
+            "id": "df2832a2-957f-43aa-88e4-a09fdf4c3b46",
+            "app_data": {
+              "ui_data": {
+                "label": "Preposition",
+                "image": "/images/palette/nodes/dictionary.svg",
+                "x_pos": 406.6255636234814,
+                "y_pos": 277.1467975422038,
+                "description": "Phrases to be matched."
+              }
+            },
+            "inputs": [
+              {
+                "id": "inPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": 1 },
+                    "label": "Input Port"
+                  }
+                },
+                "links": [
+                  {
+                    "id": "a1bdb3dc-e55f-4a08-bfe0-5f6a5c056d12",
+                    "node_id_ref": "b63805c5-9d72-4e53-9e66-c8f7419fcf68",
+                    "port_id_ref": "outPort"
+                  }
+                ]
+              }
+            ],
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": -1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "dictionary" }
+          },
+          {
+            "id": "863f5c4c-6c1e-427a-9482-5592732aa81e",
+            "app_data": {
+              "ui_data": {
+                "label": "RevenueOfDivision1",
+                "image": "/images/palette/nodes/sequence.svg",
+                "x_pos": 689.1108165795426,
+                "y_pos": 131.7802573154296,
+                "description": "Connect your extractors for execution"
+              }
+            },
+            "inputs": [
+              {
+                "id": "inPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 2, "max": -1 },
+                    "label": "Input Port"
+                  }
+                },
+                "links": [
+                  {
+                    "id": "d09d83bb-bce2-4068-8cd1-a655d2609b92",
+                    "node_id_ref": "bba756a6-5a45-426c-a8d9-4a1cd6a19881",
+                    "port_id_ref": "outPort"
+                  },
+                  {
+                    "id": "14e011d0-8780-4b31-a7a4-85f2f318055d",
+                    "node_id_ref": "8494ae16-4f5e-4e48-87d0-988b98c2cefd",
+                    "port_id_ref": "outPort"
+                  }
+                ]
+              }
+            ],
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 0, "max": -1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "sequence" }
+          },
+          {
+            "id": "27fc9430-cb52-4dff-965b-f5f2261c43eb",
+            "app_data": {
+              "ui_data": {
+                "label": "RevenueOfDivision2",
+                "image": "/images/palette/nodes/sequence.svg",
+                "x_pos": 698.3895978424059,
+                "y_pos": 257.5583922083935,
+                "description": "Connect your extractors for execution"
+              }
+            },
+            "inputs": [
+              {
+                "id": "inPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 2, "max": -1 },
+                    "label": "Input Port"
+                  }
+                },
+                "links": [
+                  {
+                    "id": "17e6aa79-658b-4407-8cfb-0ae08dfa75b7",
+                    "node_id_ref": "8494ae16-4f5e-4e48-87d0-988b98c2cefd",
+                    "port_id_ref": "outPort"
+                  },
+                  {
+                    "id": "d59115e2-3bc7-4b37-b6e5-5d575e7a8a10",
+                    "node_id_ref": "df2832a2-957f-43aa-88e4-a09fdf4c3b46",
+                    "port_id_ref": "outPort"
+                  },
+                  {
+                    "id": "a65581eb-6d3d-40ea-8575-28f0698e5b2d",
+                    "node_id_ref": "bba756a6-5a45-426c-a8d9-4a1cd6a19881",
+                    "port_id_ref": "outPort"
+                  }
+                ]
+              }
+            ],
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 0, "max": -1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "sequence" }
+          },
+          {
+            "id": "3f122664-92b1-4d36-ac49-4341d3281294",
+            "app_data": {
+              "ui_data": {
+                "label": "RevenueOfDivision",
+                "image": "/images/palette/nodes/union.svg",
+                "x_pos": 896.982033414684,
+                "y_pos": 195.8942548251891,
+                "description": "Join nodes with similar schemas"
+              }
+            },
+            "inputs": [
+              {
+                "id": "inPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 2, "max": -1 },
+                    "label": "Input Port"
+                  }
+                },
+                "links": [
+                  {
+                    "id": "f931e0d4-7941-4d3c-b23a-3aba97529aa3",
+                    "node_id_ref": "863f5c4c-6c1e-427a-9482-5592732aa81e",
+                    "port_id_ref": "outPort"
+                  },
+                  {
+                    "id": "91db699c-5bfb-43f3-aeae-f4cea152cbf7",
+                    "node_id_ref": "27fc9430-cb52-4dff-965b-f5f2261c43eb",
+                    "port_id_ref": "outPort"
+                  }
+                ]
+              }
+            ],
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 0, "max": -1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "union" }
+          },
+          {
+            "id": "7ac4050a-15a3-4c8b-8eb3-ece334de9bd2",
+            "app_data": {
+              "ui_data": {
+                "label": "Amount",
+                "image": "/images/palette/nodes/regex.svg",
+                "x_pos": 404.05303022712064,
+                "y_pos": 359.26525756451525,
+                "description": "Build a regular expression extractor."
+              }
+            },
+            "inputs": [
+              {
+                "id": "inPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": 2 },
+                    "label": "Input Port"
+                  }
+                },
+                "links": [
+                  {
+                    "id": "bee2770f-f3c2-4b6a-a4d8-40eba3be0100",
+                    "node_id_ref": "b63805c5-9d72-4e53-9e66-c8f7419fcf68",
+                    "port_id_ref": "outPort"
+                  }
+                ]
+              }
+            ],
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": 1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "regex" }
+          },
+          {
+            "id": "295c7f55-9008-46d2-9f00-e5fcfa8cdbf6",
+            "app_data": {
+              "ui_data": {
+                "label": "RevenueByDivision",
+                "image": "/images/palette/nodes/sequence.svg",
+                "x_pos": 1088.4960852117756,
+                "y_pos": 321.7313064976705,
+                "description": "Connect your extractors for execution"
+              }
+            },
+            "inputs": [
+              {
+                "id": "inPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 2, "max": -1 },
+                    "label": "Input Port"
+                  }
+                },
+                "links": [
+                  {
+                    "id": "429b38d4-c356-4338-b7dd-7f1aff8424e6",
+                    "node_id_ref": "3f122664-92b1-4d36-ac49-4341d3281294",
+                    "port_id_ref": "outPort"
+                  },
+                  {
+                    "id": "f7941d81-3455-43e8-892f-03079762ffd2",
+                    "node_id_ref": "7ac4050a-15a3-4c8b-8eb3-ece334de9bd2",
+                    "port_id_ref": "outPort"
+                  }
+                ]
+              }
+            ],
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 0, "max": -1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "sequence" }
+          },
+          {
+            "id": "9de33a19-783f-4a93-83dd-3467710dd430",
+            "app_data": {
+              "ui_data": {
+                "label": "RevenueConsolidated",
+                "image": "/images/palette/nodes/consolidate.svg",
+                "x_pos": 1091.8078686464858,
+                "y_pos": 426.60561285679955,
+                "description": "Remove overlapping annotations"
+              }
+            },
+            "inputs": [
+              {
+                "id": "inPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 1, "max": 1 },
+                    "label": "Input Port"
+                  }
+                },
+                "links": [
+                  {
+                    "id": "237275e6-3d14-4dc2-a723-72bc1c0b75a2",
+                    "node_id_ref": "295c7f55-9008-46d2-9f00-e5fcfa8cdbf6",
+                    "port_id_ref": "outPort"
+                  }
+                ]
+              }
+            ],
+            "outputs": [
+              {
+                "id": "outPort",
+                "app_data": {
+                  "ui_data": {
+                    "cardinality": { "min": 0, "max": -1 },
+                    "label": "Output Port"
+                  }
+                }
+              }
+            ],
+            "parameters": { "type": "consolidate" }
+          }
+        ],
+        "app_data": { "ui_data": { "comments": [] }, "language": "en" },
+        "runtime_ref": ""
+      }
+    ],
+    "schemas": []
+  },
+  "nodes": [
+    {
+      "label": "Division",
+      "nodeId": "bba756a6-5a45-426c-a8d9-4a1cd6a19881",
+      "type": "dictionary",
+      "description": "Phrases to be matched.",
+      "isValid": true,
+      "items": [
+        "Software",
+        "Hardware",
+        "Global Business Services",
+        "Global Technology Services"
+      ],
+      "caseSensitivity": "match",
+      "lemmaMatch": false,
+      "externalResourceChecked": false,
+      "mapTerms": false
+    },
+    {
+      "label": "Preposition",
+      "nodeId": "df2832a2-957f-43aa-88e4-a09fdf4c3b46",
+      "type": "dictionary",
+      "description": "Phrases to be matched.",
+      "isValid": true,
+      "items": ["from", "for"],
+      "caseSensitivity": "ignore",
+      "lemmaMatch": false,
+      "externalResourceChecked": false,
+      "mapTerms": false
+    },
+    {
+      "label": "Metric",
+      "nodeId": "8494ae16-4f5e-4e48-87d0-988b98c2cefd",
+      "type": "dictionary",
+      "description": "Phrases to be matched.",
+      "isValid": true,
+      "items": ["revenue"],
+      "caseSensitivity": "ignore",
+      "lemmaMatch": true,
+      "externalResourceChecked": false,
+      "mapTerms": false
+    },
+    {
+      "label": "RevenueOfDivision1",
+      "nodeId": "863f5c4c-6c1e-427a-9482-5592732aa81e",
+      "type": "sequence",
+      "description": "Connect your extractors for execution",
+      "isValid": true,
+      "renamed": "RevenueOfDivision",
+      "pattern": "(<Division.Division>)<Token>{1,2}(<Metric.Metric>)",
+      "upstreamNodes": [
+        {
+          "label": "Division",
+          "nodeId": "bba756a6-5a45-426c-a8d9-4a1cd6a19881",
+          "type": "dictionary",
+          "visible": false,
+          "renamed": "Division"
+        },
+        {
+          "label": "Metric",
+          "nodeId": "8494ae16-4f5e-4e48-87d0-988b98c2cefd",
+          "type": "dictionary",
+          "visible": false,
+          "renamed": "Metric"
+        }
+      ],
+      "tokens": [{ "min": "1", "max": "2" }]
+    },
+    {
+      "label": "RevenueOfDivision2",
+      "nodeId": "27fc9430-cb52-4dff-965b-f5f2261c43eb",
+      "type": "sequence",
+      "description": "Connect your extractors for execution",
+      "isValid": true,
+      "renamed": "RevenueOfDivision",
+      "pattern": "(<Metric.Metric>)<Token>{0,1}(<Preposition.Preposition>)<Token>{0,2}(<Division.Division>)",
+      "upstreamNodes": [
+        {
+          "label": "Metric",
+          "nodeId": "8494ae16-4f5e-4e48-87d0-988b98c2cefd",
+          "type": "dictionary",
+          "visible": false,
+          "renamed": "Metric"
+        },
+        {
+          "label": "Preposition",
+          "nodeId": "df2832a2-957f-43aa-88e4-a09fdf4c3b46",
+          "type": "dictionary",
+          "visible": false,
+          "renamed": "Preposition"
+        },
+        {
+          "label": "Division",
+          "nodeId": "bba756a6-5a45-426c-a8d9-4a1cd6a19881",
+          "type": "dictionary",
+          "visible": false,
+          "renamed": "Division"
+        }
+      ],
+      "tokens": [
+        { "min": "0", "max": "1" },
+        { "min": "0", "max": "2" }
+      ]
+    },
+    {
+      "label": "Amount",
+      "nodeId": "7ac4050a-15a3-4c8b-8eb3-ece334de9bd2",
+      "type": "regex",
+      "description": "Build a regular expression extractor.",
+      "isValid": true,
+      "regexInput": "\\$\\d+(\\.\\d+)?\\s+billion",
+      "expressionType": "regular",
+      "caseSensitivity": "match",
+      "tokenRange": { "checked": false, "range": [0, 0] },
+      "canonEq": false,
+      "dotAll": true,
+      "multiline": false,
+      "unixLines": false
+    },
+    {
+      "label": "RevenueOfDivision",
+      "nodeId": "3f122664-92b1-4d36-ac49-4341d3281294",
+      "type": "union",
+      "description": "Join nodes with similar schemas",
+      "isValid": true,
+      "upstreamNodes": [
+        {
+          "label": "RevenueOfDivision1",
+          "nodeId": "863f5c4c-6c1e-427a-9482-5592732aa81e"
+        },
+        {
+          "label": "RevenueOfDivision2",
+          "nodeId": "27fc9430-cb52-4dff-965b-f5f2261c43eb"
+        }
+      ]
+    },
+    {
+      "label": "RevenueByDivision",
+      "nodeId": "295c7f55-9008-46d2-9f00-e5fcfa8cdbf6",
+      "type": "sequence",
+      "description": "Connect your extractors for execution",
+      "isValid": true,
+      "renamed": "RevenueByDivision",
+      "pattern": "(<RevenueOfDivision.RevenueOfDivision>)<Token>{0,35}(<Amount.Amount>)",
+      "upstreamNodes": [
+        {
+          "label": "RevenueOfDivision",
+          "nodeId": "3f122664-92b1-4d36-ac49-4341d3281294",
+          "type": "union",
+          "visible": false,
+          "renamed": "RevenueOfDivision"
+        },
+        {
+          "label": "Amount",
+          "nodeId": "7ac4050a-15a3-4c8b-8eb3-ece334de9bd2",
+          "type": "regex",
+          "visible": false,
+          "renamed": "Amount"
+        }
+      ],
+      "tokens": [{ "min": "0", "max": "35" }]
+    },
+    {
+      "label": "RevenueConsolidated",
+      "nodeId": "9de33a19-783f-4a93-83dd-3467710dd430",
+      "type": "consolidate",
+      "description": "Remove overlapping annotations",
+      "isValid": true,
+      "consolidateTarget": "RevenueByDivision",
+      "consolidatePolicy": "NotContainedWithin"
+    },
+    {
+      "label": "Input Documents_1",
+      "nodeId": "b63805c5-9d72-4e53-9e66-c8f7419fcf68",
+      "type": "input",
+      "description": "Select documents to apply your NLP rules.",
+      "isValid": false,
+      "files": []
+    }
+  ]
+}
